@@ -6,6 +6,7 @@
 #define WORKBENCH_GLPROGRAM_H
 #include "GLUnit.h"
 #include "GLShader.h"
+#include <glm/glm.hpp>
 
 namespace rick::core::gl {
     /**
@@ -32,6 +33,11 @@ namespace rick::core::gl {
          * 删除渲染器
          */
         ~GLProgram();
+        /**
+         * 设置矩阵
+         * @param mat  4x4 矩阵
+         */
+        void setUniformMatrix(const char* name, glm::mat4x4 mat);
     };
 };
 

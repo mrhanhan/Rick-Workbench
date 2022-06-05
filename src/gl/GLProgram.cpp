@@ -33,4 +33,8 @@ namespace rick::core::gl {
         glDeleteProgram(this->identifier);
     }
 
+
+    void GLProgram::setUniformMatrix(const char *name, glm::mat4x4 mat) {
+        glUniformMatrix4fv(glGetUniformLocation(this->identifier, name), 1, GL_FALSE, &mat[0][0]);
+    }
 }
